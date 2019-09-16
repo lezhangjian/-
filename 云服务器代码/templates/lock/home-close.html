@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能家居</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <style>
+         /*清除浮动*/
+        .clearfix :after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        ul{
+            list-style: none ;
+            position: absolute;
+        }
+        div{
+             width:1360px;
+        }
+        #father {
+            height: 620px;
+            position:relative;
+            width: 1360px;
+        }
+        #back {
+            height: 620px;
+            background-image: url("http://kuailezhai.cn/static/back.jpg");
+            background-size:1360px  620px ;
+            background-position: center ;
+            background-repeat: no-repeat ;
+            line-height: 100px;
+            margin: auto ;
+            font-size: 23px;
+        }
+        #back .menu {
+            float:right;
+            margin-left: 1100px;
+
+        }
+         #back .menu li{
+             float: left;
+             padding: 0 10px;
+         }
+        #wrap1 {
+            height:100px;
+            font-size: 40px;
+            text-align: left ;
+            line-height:170px;
+            position: absolute;
+            top:40px;
+            left:89px ;
+            color:white;
+            width: 620px;
+        }
+         #wrap2 {
+             font-size: 50px;
+             text-align: left ;
+             line-height: 150px;
+             position: absolute;
+             top:136px;
+             left: 108px;
+             color: white;
+             width:620px;
+        }
+        a{
+            text-decoration:none;
+            color: whitesmoke;
+        }
+
+        #back .wen {
+            width: 260px;
+            position: absolute;
+            top:330px;
+            left: 265px;
+            font-size: 40px;
+            color: whitesmoke;
+        }
+        #back .guang {
+            width: 220px;
+            position: absolute;
+            color: whitesmoke;
+            top:330px;
+            left: 550px;
+            font-size: 40px;
+        }
+        #back .shi{
+            width: 620px;
+            position: absolute;
+            color: whitesmoke;
+            top:447px;
+            left: 265px;
+            font-size: 40px;
+        }
+        #back .door li{
+            list-style: none;
+
+        }
+        #door  {
+            width: 220px;
+            position: relative;
+            top:412px;
+            left:420px;
+        }
+        .door li{
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+        }
+        .door li.show {
+            display: block;
+        }
+        #face{
+          width: 100px;
+          height: 30px;
+         // background: red;
+          position: absolute;
+          top: 35px;
+          left: 1235px;
+
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+<div id="father">
+    <div id="wrap1"></div>
+    <div id="wrap2"></div>
+    <div id="back">
+         <ul class="menu">
+            <li><a href="javascript:void(0)">{{ username }}</a></li>
+            <li><a href="http://kuailezhai.cn/logout/">退出</a></li>
+        </ul>
+{#        <div id="face"><a href="http://kuailezhai.cn/add_face">添加人脸</a></div>#}
+        <div class="wen"><b>{{ tem }}℃</b></div>
+        <div class="guang"><b>{{ bright }}%</b></div>
+        <div class="shi"><b>{{ hum }}%</b></div>
+        <div id="door">
+            <a href="http://kuailezhai.cn/page_button"><img id="doorclose" src="http://kuailezhai.cn/static/door-close.jpg "  width="288px"  height="141px"  alt=""></a>
+        </div>
+    </div>
+</div>
+   <script>
+        var oWrap1=document.getElementById("wrap1");
+        var oWrap2=document.getElementById("wrap2");
+
+       function change1() {
+           var data = new Date();
+           var year = data.getFullYear();
+           var mon = data.getMonth() + 1;
+           var date = data.getDate();
+           var day = data.getDay();
+
+           oWrap1.innerHTML = year + "年" + mon + "月" + date + "日" + "星期" + day;
+       }
+       change1 ();
+       setInterval (change1 ,1000);
+       function change2() {
+           var data=new Date();
+           var hour=data.getHours ();
+           var min=data.getMinutes ();
+           var sec=data.getSeconds ();
+           hour=toTwo (hour);
+           min=toTwo (min);
+           sec=toTwo (sec);
+           function toTwo(n) {
+               if(n<10){
+                   n="0"+n;
+               }
+               return n;
+           }
+        oWrap2 .innerHTML =hour + "时" +min + "分" +sec + "秒" ; 
+       }
+       change2 ();
+       setInterval (change2 ,1000);
+
+   </script>
+</body>
+</html> 

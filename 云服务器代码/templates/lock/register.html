@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<style>
+    body {
+    background: rgb(232, 236, 239);
+    font-family: Roboto-Light, Helvetica, Arial, sans-serif;
+        width:1500px;
+        height:800px ;
+        background-repeat: no-repeat ;
+        background-position: center ;
+         background-image: url("http://kuailezhai.cn/static/loginback.jpg ");
+         background-size:1500px  800px ;
+        position: relative;
+    }
+    header {
+        text-align: center;
+    }
+    header img {
+        height: 40px;
+    }
+    section {
+       width: 370px;
+        height: 390px;
+        background: white;
+        margin: 0 auto;
+        padding: 30px;
+        font-size: 20px;
+        color: dodgerblue;
+        position: absolute;
+        top:160px;
+        left: 530px;
+             background-color:gainsboro;
+    }
+    section p {
+        text-align: center;
+    }
+    input {
+        height: 30px;
+        margin-bottom: 6px;
+        margin-top: 4px;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid rgb(238, 239, 241);
+        text-indent: 1em;
+        font-size: 20px;
+    }
+    .logo {
+        background: rgb(32, 167, 82);
+        color: white;
+        height: 40px;
+        width: 375px;
+        background-color: #00a8e0;
+    }
+    a {
+        text-decoration: none;
+        color: #56a5f9;
+    }
+    p{
+        font-size: 30px;
+        height: 30px;
+    }
+</style>
+<body>
+
+<br>
+<br>
+<br>
+<br>
+
+<section>
+    <form action="" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='RUfpXzRoYLyGTDOStmYfaxTkWSOsU7YSGoryKA0ljYydpRVga8NePIF7pJ5zpZBK' />
+        <p>注册用户名</p>
+        <br>
+        用户名(6~30个字符，可使用字母、数字、下划线，需以字母开头 )
+        <br>
+        <input type="text" name="username" required placeholder="用户名">
+        <br>
+        密码(6~30个字符)
+        <br>
+        <input type="password" name="password" required placeholder="密码">
+        <br>
+        确定密码
+        <br>
+        <input type="password" name="password_repeat" required placeholder="请再次输入密码">
+        <br>
+        <input class="logo" type="submit" value="注册">
+                {% csrf_token %}
+
+    </form>
+</section>
+</body>
+</html>

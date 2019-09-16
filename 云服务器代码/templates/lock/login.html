@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign in</title>
+</head>
+<style>
+    body {
+    background: rgb(232, 236, 239);
+       // background-color: red;
+    font-family: Roboto-Light, Helvetica, Arial, sans-serif;
+     width:1660px;
+        height:840px ;
+        background-repeat: no-repeat ;
+        background-position: center ;
+         background-image: url("http://kuailezhai.cn/static/loginback.jpg ");
+         background-size:1675px  830px ;
+        position: relative;
+    }
+    header {
+        text-align: center;
+    }
+    header img {
+        height: 40px;
+    }
+    section {
+        width: 430px;
+        height: 430px;
+        position: absolute;
+        top:160px;
+        left: 630px;
+        background: white;
+        margin: 0 auto;
+        padding: 30px;
+        font-size: 30px;
+        color: #00a8e0;
+        position: absolute;
+        top:160px;
+        left: 630px;
+        background-color:gainsboro; 
+
+    }
+    section p {
+        text-align: center;
+    }
+    input {
+        height: 40px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        width: 100%;
+        border-radius: 5px;
+        border: 5px solid rgb(238, 239, 241);
+        text-indent: 1em;
+        font-size: 25px;
+    }
+    .logo {
+        background: rgb(32, 167, 82);
+        color: white;
+        height: 55px;
+        width:440px;
+        font-size: 25px;
+        background-color: #00a8e0;
+    }
+    a {
+        text-decoration: none;
+        color: dodgerblue;
+    }
+    /*#loginback {
+         //width: 100%;
+         background-repeat: no-repeat ;
+         background-position: center ;
+         background-image: url("loginback.jpg");
+        background-color: red;
+    }*/
+</style>
+<body>
+
+<section>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>还没有账户？ <a href="http://kuailezhai.cn/register/">点击注册</a>
+        </p>
+        用户名
+        <br>
+        <input type="text" name="username" required placeholder="请输入用户名">
+        <br> 密码
+
+        <br>
+        <input type="password" name="password" required placeholder="请输入密码">
+        <br>
+        <input class="logo" type="submit" value="登录">
+    </form>
+</section>
+</body>
+</html>
